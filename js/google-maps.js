@@ -24,14 +24,14 @@ function initMap() {
         }
     });
 
-    var rosarios = new google.maps.Marker({
+    var rosario = new google.maps.Marker({
         position: {
             lat: 29.4154031,
             lng: -98.4895912
         },
         map: map
     });
-    var ritas = new google.maps.Marker({
+    var rita = new google.maps.Marker({
         position: {
             lat: 29.424703,
             lng: -98.48999029999999
@@ -41,15 +41,32 @@ function initMap() {
 
 
 
-    var infoWindow = new google.maps.InfoWindow({
-        content: 'Rosario\'s'
+    var rosarioInfo = new google.maps.InfoWindow({
+        content: "<h1>Rosario's</h1>\n" +
+        "<h3>Great Margaritas!</h3>\n" +
+        "<h3>Live Music!</h3>\n" +
+        "<h3>Open Late</h3>"
+
+
     });
 
-    infoWindow.open(map, rosarios);
+    google.maps.event.addListener(rosario, "click", function(){
+        // console.log("Fire");
+        rosarioInfo.open(map, rosario);
+    })
 
-    var infoWindow = new google.maps.InfoWindow({
-        content: 'Rita\'s'
+    // infoWindow.open(map, rosarios);
+
+    var ritaInfo = new google.maps.InfoWindow({
+        content: "<h1>Rita's</h1>\n" +
+        "<h3>Great Margaritas!</h3>\n" +
+        "<h3>Live Music!</h3>\n" +
+        "<h3>Open Late</h3>"
     });
 
-    infoWindow.open(map, ritas);
+    google.maps.event.addListener(rita, "click", function(){
+        // console.log("Fire");
+        ritaInfo.open(map, rita);
+    })
+    // infoWindow.open(map, ritas);
 }
