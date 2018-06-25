@@ -13,6 +13,10 @@ function initMap() {
     var map = new google.maps.Map(mapCanvas, mapOptions);
 
     var geo = new google.maps.Geocoder();
+    var image1 = "img/fork_knife.png";
+    var image2 = "img/fork_knife.png";
+    var image3 = "img/mcdonalds.png";
+    // var image = "https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png";
 
     geo.geocode({address: "101 Alamo Plaza, San Antonio"}, function (response, status) {
         if (status === "OK") {
@@ -32,6 +36,10 @@ function initMap() {
                 lng: -98.4895912
             },
             animation: google.maps.Animation.DROP,
+            icon: {
+                url: image1,
+                // path: image,
+            },
             map: map
         },
         infoWindow: {
@@ -49,6 +57,10 @@ function initMap() {
                 lng: -98.48999029999999
             },
             animation: google.maps.Animation.DROP,
+            icon: {
+                url: image2,
+                // path: image,
+            },
             map: map
         },
         infoWindow: {
@@ -66,6 +78,10 @@ function initMap() {
                 lng: -98.48746210000002
             },
             animation: google.maps.Animation.DROP,
+            icon: {
+                url: image3,
+                // path: image,
+            },
             map: map
         },
         infoWindow: {
